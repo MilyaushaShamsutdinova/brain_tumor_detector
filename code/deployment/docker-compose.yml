@@ -1,0 +1,18 @@
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile.api
+    ports:
+      - "8000:8000"
+    container_name: fastapi_app
+
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile.app
+    ports:
+      - "8501:8501"
+    container_name: streamlit_app
+    depends_on:
+      - api
