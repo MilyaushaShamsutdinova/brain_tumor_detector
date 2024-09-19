@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 from PIL import Image
 
-st.title("Brain Tumor Detection")
+st.title("Brain Tumor Detector")
 
 uploaded_file = st.file_uploader("Choose a brain MRI image...", type="jpg")
 
@@ -14,8 +14,8 @@ if uploaded_file is not None:
         st.write("Classifying...")
         
         files = {"file": uploaded_file.getvalue()}
-        response = requests.post("http://localhost:8000/predict", files=files)
-        # response = requests.post("http://api:8000/predict", files=files)  # for docker file
+        # response = requests.post("http://localhost:8000/predict", files=files)
+        response = requests.post("http://api:8000/predict", files=files)  # for docker file
         prediction = response.json()["prediction"]
         
         st.write(f"Prediction: {prediction}")
