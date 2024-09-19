@@ -8,6 +8,6 @@ roboflow:
   url: https://universe.roboflow.com/yoloprojects/brain-tumor-detection-2103d/dataset/1
   version: 1
   workspace: yoloprojects
-test: M:\python_projects\brain_tumor_detector\code\datasets\Brain-tumor-Detection-1\test\images
-train: M:\python_projects\brain_tumor_detector\code\datasets\Brain-tumor-Detection-1\train\images
-val: M:\python_projects\brain_tumor_detector\code\datasets\Brain-tumor-Detection-1\valid\images
+# test: M:\python_projects\brain_tumor_detector\code\datasets\Brain-tumor-Detection-1\test\images
+# train: M:\python_projects\brain_tumor_detector\code\datasets\Brain-tumor-Detection-1\train\images
+# val: M:\python_projects\brain_tumor_detector\code\datasets\Brain-tumor-Detection-1\valid\images

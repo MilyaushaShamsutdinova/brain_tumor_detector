@@ -1,0 +1,10 @@
+names:
+- Tumor
+- undefined
+nc: 2
+roboflow:
+  license: CC BY 4.0
+  project: brain-tumor-detection-2103d
+  url: https://universe.roboflow.com/yoloprojects/brain-tumor-detection-2103d/dataset/1
+  version: 1
+  workspace: yoloprojects
