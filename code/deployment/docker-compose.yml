@@ -1,18 +1,36 @@
 services:
   api:
     build:
-      context: ./api
-      dockerfile: Dockerfile.api
+      context: ../../
+      dockerfile: code/deployment/api/Dockerfile.api
     ports:
       - "8000:8000"
-    container_name: fastapi_app
+    volumes:
+      - ../../code/deployment/api:/app/code/deployment/api
+      - ../../code/deployment/app:/app/code/deployment/app
+      - ../../code/models:/app/code/models
+      - ../../data:/app/data
+      - ../../models:/app/models
+    networks:
+      - app-network
 
   app:
     build:
-      context: ./app
-      dockerfile: Dockerfile.app
+      context: ../../
+      dockerfile: code/deployment/app/Dockerfile.app
     ports:
       - "8501:8501"
-    container_name: streamlit_app
     depends_on:
       - api
+    volumes:
+      - ../../code/deployment/api:/app/code/deployment/api
+      - ../../code/deployment/app:/app/code/deployment/app
+      - ../../code/models:/app/code/models
+      - ../../data:/app/data
+      - ../../models:/app/models
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
