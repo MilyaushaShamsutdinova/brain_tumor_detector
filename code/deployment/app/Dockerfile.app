@@ -15,12 +15,13 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 
-COPY ./code/deployment /app/code/deployment
+COPY ./code/deployment/app /app/code/deployment/app
 COPY ./code/models /app/code/models
 COPY ./code/setup.py /app/code/setup.py
 COPY ./code/__init__.py /app/code/__init__.py
 COPY ./data /app/data
 COPY ./models /app/models
+
 
 RUN pip install --upgrade pip \
     && pip install -r /app/code/deployment/app/requirements.txt \
